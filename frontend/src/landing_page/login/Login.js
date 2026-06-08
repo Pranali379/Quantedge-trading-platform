@@ -13,14 +13,14 @@ function Login() {
       [e.target.name]: e.target.value,
     });
   };
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/login",
+        "https://quantedge-trading-platform.onrender.com/",
         formData
       );
 
@@ -28,7 +28,7 @@ function Login() {
 
       alert("Login successful!");
 
-      window.location.href = "http://localhost:3001";
+      window.location.href = window.location.href = "https://quantedge-trading-platform-1.onrender.com/dashboard";
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
     }
