@@ -345,6 +345,10 @@ app.get("/orders", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("QuantEdge Backend is Live 🚀");
+});
+
 app.listen(PORT, () => {
   console.log("App started!");
   mongoose.connect(uri);
