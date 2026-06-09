@@ -20,7 +20,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "https://quantedge-trading-platform.onrender.com/",
+        "https://quantedge-trading-platform.onrender.com/login",
         formData
       );
 
@@ -28,7 +28,7 @@ function Login() {
 
       alert("Login successful!");
 
-      window.location.href = window.location.href = "https://quantedge-trading-platform-frontend-1dd3.onrender.com";
+      window.location.href = window.location.href = window.location.href = "https://quantedge-trading-platform-frontend-1dd3.onrender.com/dashboard";
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
     }
