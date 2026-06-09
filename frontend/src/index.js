@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -14,6 +15,7 @@ import PricingPage from "./landing_page/pricing/PricingPage";
 import SupportPage from "./landing_page/support/SupportPage";
 import NotFound from "./landing_page/NotFound";
 import Login from "./landing_page/login/Login";
+
 
 // Components
 import Navbar from "./landing_page/Navbar";
@@ -34,6 +36,7 @@ root.render(
       <Route path="/support" element={<SupportPage />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
 
     <Footer />

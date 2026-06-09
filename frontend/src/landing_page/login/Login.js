@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -15,25 +17,25 @@ function Login() {
   };
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await axios.post(
-        "https://quantedge-trading-platform.onrender.com/login",
-        formData
-      );
+  try {
+    const res = await axios.post(
+      "https://quantedge-trading-platform.onrender.com/login",
+      formData
+    );
 
-      localStorage.setItem("token", res.data.token);
+    localStorage.setItem("token", res.data.token);
 
-      alert("Login successful!");
+    alert("Login successful!");
 
-      window.location.href = window.location.href = window.location.href = "https://quantedge-trading-platform-frontend-1dd3.onrender.com/dashboard";
-    } catch (err) {
-      alert(err.response?.data?.message || "Login failed");
-    }
-  };
+    navigate("/dashboard"); // ONLY THIS
 
+  } catch (err) {
+    alert(err.response?.data?.message || "Login failed");
+  }
+};
   return (
     <div className="container mt-5">
       <h2>Login</h2>
