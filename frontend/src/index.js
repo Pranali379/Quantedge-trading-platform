@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./dashboard/src/components/Dashboard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
