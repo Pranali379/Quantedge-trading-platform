@@ -28,7 +28,7 @@ function Login() {
 
       alert("Login successful!");
 
-      window.location.href = window.location.href = "https://quantedge-trading-platform-1.onrender.com/dashboard";
+      window.location.href = window.location.href = "https://quantedge-trading-platform-frontend-1dd3.onrender.com";
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
     }
