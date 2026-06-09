@@ -11,7 +11,7 @@ const addFunds = async () => {
   if (!amount) return;
 
   const res = await axios.post(
-    "http://localhost:8080/addFunds",
+    "https://quantedge-trading-platform.onrender.com/",
     {
       amount,
     }
@@ -27,7 +27,7 @@ const withdrawFunds = async () => {
 
   try {
     const res = await axios.post(
-      "http://localhost:8080/withdrawFunds",
+      "https://quantedge-trading-platform.onrender.com/",
       {
         amount,
       }
@@ -45,7 +45,7 @@ useEffect(() => {
 
 const fetchFunds = async () => {
   const res = await axios.get(
-    "http://localhost:8080/funds"
+    "https://quantedge-trading-platform.onrender.com/"
   );
 
   setBalance(res.data.balance);

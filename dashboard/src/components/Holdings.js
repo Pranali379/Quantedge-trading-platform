@@ -9,7 +9,7 @@ const Holdings = () => {
 
 useEffect(() => {
   axios
-    .get("http://localhost:8080/allHoldings")
+    .get("https://quantedge-trading-platform.onrender.com/")
     .then((res) => {
       console.log("SUCCESS", res.data);
       setAllHoldings(res.data);

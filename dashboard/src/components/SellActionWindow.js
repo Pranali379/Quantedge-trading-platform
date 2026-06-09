@@ -12,7 +12,7 @@ const SellActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
 const handleSellClick = () => {
-  axios.post("http://localhost:8080/newOrder", {
+  axios.post("https://quantedge-trading-platform.onrender.com/", {
     name: uid,
     qty: stockQuantity,
     price: stockPrice,
