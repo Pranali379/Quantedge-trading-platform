@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "mkdir -p src/_external && cp -r ../dashboard/src/components src/_external/dashboard && react-scripts build",
+    "build": "mkdir -p src/_external && cp -r ../dashboard/src src/_external/dashboard && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
