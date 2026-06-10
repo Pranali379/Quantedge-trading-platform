@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -34,6 +35,7 @@ root.render(
       <Route path="/support" element={<SupportPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/dashboard/*" element={<Dashboard />} />
     </Routes>
 
     <Footer />
