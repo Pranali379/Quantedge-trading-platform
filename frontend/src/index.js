@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Dashboard from "./components/Dashboard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -24,6 +24,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <HashRouter>
+  <div className="app-container">
+
     <Navbar />
 
     <Routes>
@@ -34,10 +36,14 @@ root.render(
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/support" element={<SupportPage />} />
       <Route path="/login" element={<Login />} />
-      <Route path="*" element={<NotFound />} />
+
       <Route path="/dashboard/*" element={<Dashboard />} />
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
 
     <Footer />
-  </HashRouter>
+
+  </div>
+</HashRouter>
 );
