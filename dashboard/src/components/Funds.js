@@ -11,7 +11,7 @@ const addFunds = async () => {
   if (!amount) return;
 
   const res = await axios.post(
-    "https://quantedge-trading-platform.onrender.com/addFunds",
+    "https://quantedge-dashboard-cl75.onrender.com/addFunds",
     {
       amount,
     }
@@ -27,7 +27,7 @@ const withdrawFunds = async () => {
 
   try {
     const res = await axios.post(
-      "https://quantedge-trading-platform.onrender.com/withdrawFunds",
+      "https://quantedge-dashboard-cl75.onrender.com/withdrawFunds",
       {
         amount,
       }

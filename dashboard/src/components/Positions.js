@@ -7,7 +7,7 @@ const [allPositions, setAllPositions] = useState([]);
 
 useEffect(() => {
   axios
-    .get("https://quantedge-trading-platform.onrender.com/allPositions")
+    .get("https://quantedge-dashboard-cl75.onrender.com/positions")
     .then((res) => {
       console.log("Positions data:", res.data);
       console.log("Count:", res.data.length);
