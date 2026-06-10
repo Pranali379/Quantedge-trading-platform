@@ -21,7 +21,7 @@ function Signup() {
 
     try {
       await axios.post(
-        "http://localhost:8080/signup",
+        "https://quantedge-trading-platform.onrender.com/",
         formData
       );
 
