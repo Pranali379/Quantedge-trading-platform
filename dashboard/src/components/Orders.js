@@ -11,9 +11,9 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       const res = await axios.get(
-        "https://quantedge-dashboard-cl75.onrender.com/orders"
-      );
-
+  "https://quantedge-trading-platform.onrender.com/orders"
+);
+      console.log("ORDERS API:", res.data);
       setOrders(res.data);
     } catch (err) {
       console.log(err);

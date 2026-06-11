@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
@@ -8,22 +8,24 @@ import GeneralContext from "./GeneralContext";
 import "./SellActionWindow.css";
 
 const SellActionWindow = ({ uid }) => {
+  const context = useContext(GeneralContext);
+
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
 
 const handleSellClick = () => {
-  axios.post("https://quantedge-dashboard-cl75.onrender.com/orders", {
-    name: uid,
-    qty: stockQuantity,
-    price: stockPrice,
-    mode: "SELL",
-  });
+  axios.post("https://quantedge-trading-platform.onrender.com/newOrder", {
+  name: uid,
+  qty: stockQuantity,
+  price: stockPrice,
+  mode: "SELL",
+});
 
-  GeneralContext.closeSellWindow();
+  context.closeSellWindow();
 };
 
   const handleCancelClick = () => {
-    GeneralContext.closeSellWindow();
+    context.closeSellWindow();
   };
 
   return (

@@ -30,7 +30,7 @@ function Login() {
 
     alert("Login successful!");
 
-    navigate("/dashboard"); // ONLY THIS
+    window.location.href = "http://localhost:3001";
 
   } catch (err) {
     alert(err.response?.data?.message || "Login failed");

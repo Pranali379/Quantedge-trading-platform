@@ -6,13 +6,15 @@ const Positions = () => {
 const [allPositions, setAllPositions] = useState([]);
 
 useEffect(() => {
-  axios
-    .get("https://quantedge-dashboard-cl75.onrender.com/positions")
-    .then((res) => {
-      console.log("Positions data:", res.data);
-      console.log("Count:", res.data.length);
-      setAllPositions(res.data);
-    })
+  axios.get(
+  "https://quantedge-trading-platform.onrender.com/allPositions"
+)
+   .then((res) => {
+  console.log("POSITIONS API:", res.data);
+  console.log("Count:", res.data.length);
+
+  setAllPositions(res.data);
+})
     .catch((err) => {
       console.log("HPositions error:", err);
     });

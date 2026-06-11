@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -36,9 +36,6 @@ root.render(
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/support" element={<SupportPage />} />
       <Route path="/login" element={<Login />} />
-
-      <Route path="/dashboard/*" element={<Dashboard />} />
-
       <Route path="*" element={<NotFound />} />
     </Routes>
 

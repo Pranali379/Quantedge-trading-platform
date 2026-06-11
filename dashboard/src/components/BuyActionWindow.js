@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
@@ -8,22 +8,35 @@ import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
 
 const BuyActionWindow = ({ uid }) => {
+  const context = useContext(GeneralContext);
+
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
 
-  const handleBuyClick = () => {
-    axios.post("https://quantedge-dashboard-cl75.onrender.com/newOrder", {
-      name: uid,
-      qty: stockQuantity,
-      price: stockPrice,
-      mode: "BUY",
-    });
+  const handleBuyClick = async () => {
+  console.log("BUY BUTTON CLICKED");
 
-    GeneralContext.closeBuyWindow();
-  };
+  try {
+    const res = await axios.post(
+      "https://quantedge-trading-platform.onrender.com/newOrder",
+      {
+        name: uid,
+        qty: stockQuantity,
+        price: stockPrice,
+        mode: "BUY",
+      }
+    );
+
+    console.log("SERVER RESPONSE:", res.data);
+  } catch (err) {
+    console.log("BUY ERROR:", err.response?.data || err.message);
+  }
+
+  context.closeBuyWindow();
+};
 
   const handleCancelClick = () => {
-    GeneralContext.closeBuyWindow();
+    context.closeBuyWindow();
   };
 
   return (
